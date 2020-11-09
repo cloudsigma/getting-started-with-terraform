@@ -8,10 +8,11 @@ This repo contains the sample code for the blog post [How To Use Terraform with 
 
 1. Install Terraform.
 2. Set your CloudSigma credentials in `terraform.tfvars` file.
-3. Run `terraform init`.
-4. Run `terraform apply`.
-5. After it's done deploying, the example will output an IP you can try out.
-6. To clean up and delete all resources after you're done, run `terraform destroy`.
+3. Generate a new SSH key under your home directory (`demo` and `demo.pub`)
+4. Run `terraform init`.
+5. Run `terraform apply`.
+6. After it's done deploying, the example will output an IP you can try out.
+7. To clean up and delete all resources after you're done, run `terraform destroy`.
 
 ## License
 
