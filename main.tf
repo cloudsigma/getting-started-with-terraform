@@ -35,7 +35,7 @@ resource "cloudsigma_server" "www" {
   vnc_password = "cloudsigma"
 
   drive {
-    uuid = cloudsigma_drive.debian.id
+    uuid = cloudsigma_drive.debian.uuid
   }
 
   ssh_keys = [cloudsigma_ssh_key.demo.uuid]
