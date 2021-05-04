@@ -3,12 +3,14 @@
 This repo contains the sample code for the blog post series [How To Use Terraform with CloudSigma](https://insert-link-here).
 The examples correspond to the following parts of the series:
 
-> Note: This example deploys resources into your CloudSigma account. It is not our responsibility if you are charged money for this.
+> Note: The examples deploy resources into your CloudSigma account. It is not our responsibility if you are charged money for this.
 
-1. [Getting Started with Terraform](https://insert-link-here)
+1. [Getting started with Terraform](https://insert-link-here)
     - [single-web-server](./single-web-server): Deploy a single CloudSigma server with NGINX server that will return
       "Welcome to nginx!" page for every request on port 80.
-
+2. [How to perform bulk operations](https://insert-link-here)
+    - [bulk-drives-clone](./bulk-drives-clone): Clone multiple CloudSigma drives using `count` parameter.
+    - [bulk-servers-create](./bulk-servers-create): Create multiple CloudSigma servers using `count` parameter.
 
 ## Quick start
 
