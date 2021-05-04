@@ -2,7 +2,7 @@ terraform {
   required_providers {
     cloudsigma = {
       source  = "cloudsigma/cloudsigma"
-      version = "1.0.0"
+      version = "1.4.0"
     }
   }
 }
@@ -20,8 +20,8 @@ resource "cloudsigma_ssh_key" "demo" {
 }
 
 resource "cloudsigma_drive" "debian" {
-  // Debian 10.5 server
-  clone_drive_id = "7fd6f29a-a160-4f83-9786-c339959de2b8"
+  // Debian 10.7 server
+  clone_drive_id = "84eef318-c7d0-41ff-99b5-272becb81986"
 
   media = "disk"
   name  = "debian"
@@ -54,9 +54,4 @@ resource "cloudsigma_server" "www" {
       "sudo apt-get -y install nginx",
     ]
   }
-}
-
-
-output "server" {
-  value = cloudsigma_server.www.ipv4_address
 }
