@@ -16,8 +16,8 @@ The examples correspond to the following parts of the series:
 ## Quick start
 
 1. Install Terraform.
-2. Set your CloudSigma credentials in `terraform.tfvars` file.
-3. `cd` into one of the example folders.
+2. `cd` into one of the example folders.
+3. Set your CloudSigma credentials in `terraform.tfvars` file.
 4. Run `terraform init`.
 5. Run `terraform apply`.
 6. After it's done deploying, the example will output an IP you can try out.
