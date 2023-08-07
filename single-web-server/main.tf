@@ -1,30 +1,20 @@
-terraform {
-  required_providers {
-    cloudsigma = {
-      source  = "cloudsigma/cloudsigma"
-      version = "1.4.0"
-    }
-  }
-}
-
 provider "cloudsigma" {
   username = var.cloudsigma_username
   password = var.cloudsigma_password
 }
 
-
-resource "cloudsigma_ssh_key" "demo" {
-  name        = "demo"
-  private_key = file("~/.ssh/demo")
-  public_key  = file("~/.ssh/demo.pub")
+data "cloudsigma_library_drive" "debian" {
+  filter {
+    name   = "name"
+    values = ["Debian 10.13 Server"]
+  }
 }
 
 resource "cloudsigma_drive" "debian" {
-  // Debian 10.7 server
-  clone_drive_id = "84eef318-c7d0-41ff-99b5-272becb81986"
+  clone_drive_id = data.cloudsigma_library_drive.debian.id
 
   media = "disk"
-  name  = "debian"
+  name  = "www"
   size  = 15 * 1024 * 1024 * 1024 # 15GB
 }
 
@@ -32,7 +22,7 @@ resource "cloudsigma_server" "www" {
   cpu          = 2000              # 2GHz CPU
   memory       = 512 * 1024 * 1024 # 512MB RAM
   name         = "www"
-  vnc_password = "cloudsigma"
+  vnc_password = "Cl0udS!gma"
 
   drive {
     uuid = cloudsigma_drive.debian.uuid
@@ -54,4 +44,14 @@ resource "cloudsigma_server" "www" {
       "sudo apt-get -y install nginx",
     ]
   }
+}
+
+resource "cloudsigma_ssh_key" "demo" {
+  name        = "demo"
+  private_key = trimspace(tls_private_key.key.private_key_openssh)
+  public_key  = trimspace(tls_private_key.key.public_key_openssh)
+}
+
+resource "tls_private_key" "key" {
+  algorithm = "ED25519"
 }
