@@ -8,6 +8,7 @@ The examples correspond to the following parts of the series:
 1. [Getting started with Terraform](https://insert-link-here)
     - [single-web-server](./single-web-server): Deploy a single CloudSigma server with NGINX server that will return
       "Welcome to nginx!" page for every request on port 80.
+    - [multiple-providers](./multiple-providers): Deploy a single CloudSigma server and an AWS instance
 2. [How to perform bulk operations](https://insert-link-here)
     - [bulk-drives-clone](./bulk-drives-clone): Clone multiple CloudSigma drives using `count` parameter.
     - [bulk-servers-create](./bulk-servers-create): Create multiple CloudSigma servers using `count` parameter.
@@ -16,12 +17,11 @@ The examples correspond to the following parts of the series:
 
 1. Install Terraform.
 2. Set your CloudSigma credentials in `terraform.tfvars` file.
-3. Generate a new SSH key under your home directory (`demo` and `demo.pub`)
-4. `cd` into one of the example folders.
-5. Run `terraform init`.
-6. Run `terraform apply`.
-7. After it's done deploying, the example will output an IP you can try out.
-8. To clean up and delete all resources after you're done, run `terraform destroy`.
+3. `cd` into one of the example folders.
+4. Run `terraform init`.
+5. Run `terraform apply`.
+6. After it's done deploying, the example will output an IP you can try out.
+7. To clean up and delete all resources after you're done, run `terraform destroy`.
 
 ## License
 
